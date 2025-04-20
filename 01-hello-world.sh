@@ -11,7 +11,10 @@ ps -ef
 
 find /home/ec2-user -name 76s-shell-script
 
-cat /home/ec2-user/sample.txt|grep -i "malli"
+cat /home/ec2-user/sample.txt|grep -i "preparation"
 
-cat /home/ec2-user/sample.txt|awk '{print $1F}'
+cat /home/ec2-user/sample.txt|awk '{print $2F}'
+
+df -hT|grep -vE "temp|File"|awk '{print $6F}'|cut -d % -f1
+
 
