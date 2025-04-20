@@ -5,7 +5,7 @@ ID=$(id -u)
 if [ $ID -ne 0 ]
 then
     echo "Please run this script as root user"
-   
+    exit 1
 else
     echo "You are running this script as root user"
 fi
