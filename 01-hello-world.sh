@@ -7,7 +7,7 @@ set -o pipefail
 
 df -hT
 
-ps -ef
+ps -ef |grep ec2-user
 
 find /home/ec2-user -name 76s-shell-script
 
