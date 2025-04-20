@@ -16,7 +16,8 @@ if [ $? -eq 0 ]
 then
     echo "MySQL Installation..... successfully"
 else
-    echo "MySQL Installation...... failed"
+    echo "ERROR: MySQL Installation...... failed"
+    exit 1
 fi
 
 yum install git -y
@@ -25,7 +26,8 @@ if [ $? -eq 0 ]
 then
     echo "Git installation.... successfully"
 else
-    echo "Git installation.... failed"
+    echo "ERROR: Git installation.... failed"
+    exit 1
 fi
 
 
