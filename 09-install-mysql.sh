@@ -10,13 +10,13 @@ else
     echo "You are running this script as root user"
 fi
 
-yum install mysql -y
+yum install mariadb -y
 
 if [ $? -eq 0 ]
 then
-    echo "MySQL Installation..... successfully"
+    echo "MARIADB Installation..... successfully"
 else
-    echo "ERROR: MySQL Installation...... failed"
+    echo "ERROR: MARIADB Installation...... failed"
     exit 1
 fi
 
