@@ -1,5 +1,6 @@
 #!/bin/bash
-set -x
+
+set -e
 # This script deletes log files older than 14 days from a specified directory.
 SOURCE_DIR="/tmp/logs"
 
