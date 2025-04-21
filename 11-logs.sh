@@ -33,7 +33,11 @@ yum install mariadb -y &>> $LOGFILE
 VALIDATE $? "MARIADB Installation"
 
 
-yum install gits -y &>> $LOGFILE
+yum install git -y &>> $LOGFILE
 
 VALIDATE $? "GIT Installation"
+
+yum install nginxss -y &>> $LOGFILE
+
+VALIDATE $? "Nginx Installation"
 
