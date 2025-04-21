@@ -3,6 +3,7 @@
 # It also provides a summary of the disk space usage.
 DISK_USAGE=$(df -hT|grep -vE 'temp|File')
 DISK_TRESHHOLD=1
+LOGFILE="/tmp/disk_usage.log"
 message=""
 
 while IFS= read line
@@ -13,9 +14,9 @@ do
 
     if [ $usage -ge $DISK_TRESHHOLD ]
     then
-        message+="High Disk Usage on $partition: $usage"
+        message+="High Disk Usage on $partition: $usage"  &>> $LOGFILE
     fi
 
 done <<< $DISK_USAGE
 
-echo -e "Message: $message"
+echo -e "Message: $message" &>> $LOGFILE
