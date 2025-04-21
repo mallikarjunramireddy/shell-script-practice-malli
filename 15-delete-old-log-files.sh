@@ -10,7 +10,7 @@ Y="\e[33m"
 N="\e[0m"
 
 
-if [ ! d $SOURCE_DIR ]
+if [ ! -d $SOURCE_DIR ]
 then
     echo -e "$R ERROR:: Directory $SOURCE_DIR does not exist $N"
     exit 1
