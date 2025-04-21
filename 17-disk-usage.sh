@@ -1,22 +1,19 @@
 #!/bin/bash
 # This script checks the disk space usage of the system and sends an alert if it exceeds a certain threshold.
 # It also provides a summary of the disk space usage.
-DISK_USAGE=$(df -hT|grep -vE 'temp|File')
-DISK_TRESHHOLD=1
-LOGFILE="/tmp/disk_usage.log"
+DISK_USAGE=$(df -hT | grep -vE 'tmp|File')
+DISK_THRESHOLD=1
 message=""
 
 while IFS= read line
-do 
+do
     usage=$(echo $line | awk '{print $6F}' | cut -d % -f1)
-
     partition=$(echo $line | awk '{print $1F}')
-
-    if [ $usage -ge $DISK_TRESHHOLD ]
+    if [ $usage -ge $DISK_THRESHOLD ]
     then
-        message+="High Disk Usage on $partition: $usage"  &>> $LOGFILE
+        message+="High Disk Usage on $partition: $usage "
     fi
-
 done <<< $DISK_USAGE
 
-echo -e "Message: $message" &>> $LOGFILE
+
+echo -e "Message: $message"
