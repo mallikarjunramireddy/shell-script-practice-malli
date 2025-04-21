@@ -33,7 +33,7 @@ yum install mariadb -y &>> $LOGFILE
 VALIDATE $? "MARIADB Installation"
 
 
-yum install git -y &>> $LOGFILE
+yum install gits -y &>> $LOGFILE
 
 VALIDATE $? "GIT Installation"
 
