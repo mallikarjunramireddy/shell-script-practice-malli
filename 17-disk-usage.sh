@@ -1,7 +1,7 @@
 #!/bin/bash
 # This script checks the disk space usage of the system and sends an alert if it exceeds a certain threshold.
 # It also provides a summary of the disk space usage.
-DISK_USAGE=$(df -hT|grep -vE 'temp|File')
+DISK_USAGE=$(df -hT | grep -vE 'temp|File')
 DISK_TRESHHOLD=1
 message=""
 
