@@ -1,7 +1,7 @@
 #!/bin/bash
 
 DISK_USAGE=$(df -hT | grep -vE 'tmp|File')
-DISK_THRESHOLD=50
+DISK_THRESHOLD=15
 message=""
 
 while IFS= read line
