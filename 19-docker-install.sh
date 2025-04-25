@@ -34,7 +34,8 @@ yum install -y yum-utils
 
 VALIDATE $? "Installed yum utils"
 
-yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+#yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+yum-config-manager --save --setopt=docker-ce-stable.skip_if_unavailable=true
 
 VALIDATE $? "Added docker repo"
 
